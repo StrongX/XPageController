@@ -88,4 +88,7 @@
     [XScrollView setContentOffset:CGPointMake(selectIndex*width, 0) animated:true];
     [PageBar setSelectBtnColor:selectIndex];
 }
+-(void)setTitleBarColor:(UIColor *)titleBarColor{
+    PageBar.backgroundColor = titleBarColor;
+}
 @end

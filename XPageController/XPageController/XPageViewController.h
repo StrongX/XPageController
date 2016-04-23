@@ -28,4 +28,8 @@
  *  设置滚动区滚动到某一个界面
  */
 @property (nonatomic, ) NSInteger selectIndex;
+/**
+ *  设置titleBar的背景颜色
+ */
+@property (nonatomic, strong) UIColor *titleBarColor;
 @end
