@@ -2,7 +2,9 @@
 use to create PageViewController
 
 让我们来看一下效果图：
+
 ![](https://github.com/StrongX/XPageController/blob/master/10.gif)
+
 用法十分简单：
 ```
 _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
