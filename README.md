@@ -1,7 +1,6 @@
 # XPageController
 use to create PageViewController
-XPageViewController用来创建pagecontroller。
-他的github地址：https://github.com/StrongX/XPageController
+
 让我们来看一下效果图：
 ![](https://github.com/StrongX/XPageController/blob/master/10.gif)
 用法十分简单：
@@ -24,4 +23,4 @@ _window.rootViewController = [[UINavigationController alloc]initWithRootViewCont
 [_window makeKeyAndVisible];
 ```
 你需要创建一个XPageViewController，然后给他赋予子控制器，子控制器的title会显示在最上面的滚动条。
-你当然可以更改titleBar选中未选中的颜色等之类的属性，更多信息你可以去github下载工程之后查看。
+你当然可以更改titleBar选中未选中的颜色等之类的属性.
