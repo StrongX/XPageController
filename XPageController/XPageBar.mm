@@ -55,8 +55,9 @@
     }
     if (X<width) {
         [self setTitleWidth:(width-X)/_XPageTitleArray.count];
+    }else{
+        scrollView.contentSize = CGSizeMake(X, 44);
     }
-    scrollView.contentSize = CGSizeMake(X, 44);
     [self setSelectBtnColor:_selectIndex];
 }
 -(CGFloat)returnSizeWidthWithTitle:(NSString *)title{
