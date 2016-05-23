@@ -7,29 +7,38 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol XPageDataSource <NSObject>
 
+-(NSInteger)XPageCountOfPages;
+-(UIViewController *)XPageXurrentViewController;
+
+@end
+@protocol XPageDelegate <NSObject>
+
+
+@end
 @interface XPageViewController : UIViewController
 
 
 @property (nonatomic, strong) NSArray *controllers;
 /**
- *  文字为选中的颜色
+ *  text not selected Color
  */
 @property (nonatomic, strong) UIColor *normalColor;
 /**
- *  文字选中以后的颜色
+ *  text selected Color
  */
 @property (nonatomic, strong) UIColor *selectedColor;
 /**
- *  设置标题滚动条的Y值；
+ *  the XPage's Y
  */
 @property (nonatomic, ) CGFloat pageY;
 /**
- *  设置滚动区滚动到某一个界面
+ *  the select ViewController
  */
 @property (nonatomic, ) NSInteger selectIndex;
 /**
- *  设置titleBar的背景颜色
+ *  titleBar's backgroundColor
  */
 @property (nonatomic, strong) UIColor *titleBarColor;
 @end

@@ -29,11 +29,11 @@
     VieViewController *vc4 = [[VieViewController alloc]init];
     VieViewController *vc5 = [[VieViewController alloc]init];
     
-    vc1.title = @"热门";
-    vc2.title = @"新上榜";
-    vc3.title = @"日报";
-    vc4.title = @"七日热门";
-    vc5.title = @"三十日热门";
+    vc1.title = @"viewController1";
+    vc2.title = @"viewController2";
+    vc3.title = @"viewController3";
+    vc4.title = @"viewController14";
+    vc5.title = @"viewController5";
     
     XPageViewController *pageController = [[XPageViewController alloc]init];
     pageController.controllers = @[vc1,vc2,vc3,vc4,vc5];
