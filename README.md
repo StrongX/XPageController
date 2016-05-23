@@ -1,7 +1,7 @@
 # XPageController
 use to create PageViewController
 
-让我们来看一下效果图：
+design sketch：
 
 ![](https://github.com/StrongX/XPageController/blob/master/10.gif)
 
