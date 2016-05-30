@@ -8,7 +8,7 @@ design sketch：
 # Install
 you just need drag the XPageController folder to your project
 
-# Usage  -OC
+# Usage
 ```
 _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
 XPageViewController *pageController = [[XPageViewController alloc]init];
@@ -34,10 +34,6 @@ return vc;
 return [NSString stringWithFormat:@"ViewController%ld",index];
 }
 ```
-
-# Usage  -swift
- if you use the swift please see the swift Demo
-
 # Other
 you should init a XPageViewController,and set the childController,the childController's title will show above the Controller.
 you can change the title's color and title's backGroundColor
