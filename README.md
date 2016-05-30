@@ -3,7 +3,7 @@ use to create PageViewController
 
 design sketch：
 
-![](https://github.com/StrongX/XPageController/blob/master/10.gif)
+![](https://github.com/StrongX/XPageController/blob/master/demo.gif)
 
 # Install
 you just need drag the XPageController folder to your project
