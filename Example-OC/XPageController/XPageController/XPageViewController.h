@@ -9,18 +9,16 @@
 #import <UIKit/UIKit.h>
 @protocol XPageDataSource <NSObject>
 
--(NSInteger)XPageCountOfPages;
--(UIViewController *)XPageXurrentViewController;
+-(NSInteger)numberOfControllers;
+
+-(UIViewController *)XPageCurrentViewController:(NSInteger)index;
+
+-(NSString *)XPageTitleOfEachController:(NSInteger)index;
 
 @end
-@protocol XPageDelegate <NSObject>
 
-
-@end
 @interface XPageViewController : UIViewController
 
-
-@property (nonatomic, strong) NSArray *controllers;
 /**
  *  text not selected Color
  */
@@ -41,4 +39,9 @@
  *  titleBar's backgroundColor
  */
 @property (nonatomic, strong) UIColor *titleBarColor;
+/**
+ *  dataSource
+ */
+@property (nonatomic,) id<XPageDataSource>dataSource;
+
 @end

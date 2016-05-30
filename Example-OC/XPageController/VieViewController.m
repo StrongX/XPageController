@@ -29,6 +29,5 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    NSLog(self.title);
 }
 @end

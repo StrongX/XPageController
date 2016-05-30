@@ -22,12 +22,9 @@
     width = [UIScreen mainScreen].bounds.size.width;
     height = [UIScreen mainScreen].bounds.size.height;
     titleBtnArray = [@[] mutableCopy];
-    
     _selectIndex = 0;
-    
     _normarColor = [UIColor grayColor];
     _didSelectColor = [UIColor colorWithRed:234/255.0 green:69/255.0 blue:47/255.0 alpha:0.8];
-    
     self.backgroundColor = [UIColor whiteColor];
     scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, width, 44)];
     scrollView.showsVerticalScrollIndicator = false;
@@ -49,7 +46,6 @@
         [scrollView addSubview:titleBtn];
         X+=([self returnSizeWidthWithTitle:title]+40);
         [titleBtnArray addObject:titleBtn];
-        
         titleBtn.tag = i;
         [titleBtn addTarget:self action:@selector(clickTitleBtn:) forControlEvents:1<<6];
     }
