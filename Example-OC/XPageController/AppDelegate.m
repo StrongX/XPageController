@@ -28,6 +28,7 @@
     pageController.dataSource = self;
     _window.rootViewController = [[UINavigationController alloc]initWithRootViewController:pageController];
     [_window makeKeyAndVisible];
+
     return YES;
 }
 /**
@@ -42,9 +43,6 @@
     return vc;
 }
 -(NSString *)XPageTitleOfEachController:(NSInteger)index{
-    if (index == 0) {
-        return @"1234";
-    }
     return [NSString stringWithFormat:@"ViewController%ld",index];
 }
 

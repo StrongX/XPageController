@@ -102,6 +102,7 @@
 }
 -(void)updateSelectBtn{
     [self setSelectBtnColor:_selectIndex];
+    _scrollBar.backgroundColor = _didSelectColor;
 }
 /**
  *  点击按钮事件
