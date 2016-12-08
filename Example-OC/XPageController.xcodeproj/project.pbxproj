@@ -222,6 +222,7 @@
 				TargetAttributes = {
 					2AC50E451CC8E31E009EB976 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 2EZHM6E2G9;
 					};
 					2AC50E5E1CC8E31E009EB976 = {
 						CreatedOnToolsVersion = 7.3;
@@ -423,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2EZHM6E2G9;
 				INFOPLIST_FILE = XPageController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xlx.XPageController;
@@ -434,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2EZHM6E2G9;
 				INFOPLIST_FILE = XPageController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xlx.XPageController;

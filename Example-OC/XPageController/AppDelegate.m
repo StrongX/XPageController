@@ -42,6 +42,9 @@
     return vc;
 }
 -(NSString *)XPageTitleOfEachController:(NSInteger)index{
+    if (index == 0) {
+        return @"1234";
+    }
     return [NSString stringWithFormat:@"ViewController%ld",index];
 }
 

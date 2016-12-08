@@ -17,6 +17,8 @@
 @property (nonatomic, strong) UIColor *didSelectColor;
 @property (nonatomic, strong) UIColor *normarColor;
 @property (nonatomic, ) NSInteger selectIndex;
+@property (nonatomic, strong) UIView *scrollBar;
+
 @property (nonatomic, strong) XPageViewController *target;
 
 -(void)setSelectBtnColor:(NSInteger)index;

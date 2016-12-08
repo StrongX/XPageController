@@ -15,7 +15,6 @@
     UIScrollView *scrollView;
     NSMutableArray *titleBtnArray;
     
-    
 }
 -(id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
@@ -55,6 +54,19 @@
         scrollView.contentSize = CGSizeMake(X, 44);
     }
     [self setSelectBtnColor:_selectIndex];
+    [scrollView addSubview:self.scrollBar];
+}
+/*
+ * 添加滚动的横条
+ *
+ */
+-(UIView *)scrollBar{
+    if (!_scrollBar) {
+        CGFloat btnwidth = ((UIButton *)titleBtnArray.firstObject).frame.size.width;
+        _scrollBar = [[UIView alloc]initWithFrame:CGRectMake(0, 42, btnwidth, 2)];
+        _scrollBar.backgroundColor = _didSelectColor;
+    }
+    return _scrollBar;
 }
 -(CGFloat)returnSizeWidthWithTitle:(NSString *)title{
     NSDictionary *attrs = @{NSFontAttributeName : [UIFont systemFontOfSize:15]};
@@ -115,7 +127,21 @@
     }
     if (scrollToX<0) {
         [scrollView setContentOffset:CGPointMake(0, 0) animated:true];
-        
     }
+    //移动scrollBar
+    CGFloat btnwidth = btn.frame.size.width;
+    CGFloat btnX = btn.frame.origin.x;
+    [UIView animateWithDuration:0.3 animations:^{
+        _scrollBar.frame = CGRectMake(btnX, 42, btnwidth, 2);
+    }];
 }
 @end
+
+
+
+
+
+
+
+
+
