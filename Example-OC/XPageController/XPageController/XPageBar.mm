@@ -136,12 +136,7 @@
     CGFloat widP = fabs((offX/width-_selectIndex)) * offWidth;             //宽度变化
     maskWidth = maskWidth1 - widP;
 
-    if (offX>_selectIndex*width) {          //向左滑动
-        x = (offX/width-_selectIndex) * off;
-        x += x1;
-    }else{                                  //向右滑动
-        x = x1 - (width*_selectIndex-offX) / width *off;
-    }
+    x = x1 - (width*_selectIndex-offX) / width *off;
     
     CGRect maskRect = mask.frame;
     maskRect.origin.x = x;
