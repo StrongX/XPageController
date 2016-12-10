@@ -67,6 +67,10 @@
     NSInteger index = scrollView.contentOffset.x/width;
     [self setSelectIndex:index];
 }
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGFloat X = scrollView.contentOffset.x;
+    PageBar.offX = X;
+}
 -(void)setSelectIndex:(NSInteger )selectIndex{
     _selectIndex = selectIndex;
     [XScrollView setContentOffset:CGPointMake(selectIndex*width, 0) animated:true];

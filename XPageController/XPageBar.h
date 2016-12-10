@@ -17,10 +17,12 @@
 @property (nonatomic, strong) UIColor *didSelectColor;
 @property (nonatomic, strong) UIColor *normarColor;
 @property (nonatomic, ) NSInteger selectIndex;
-@property (nonatomic, strong) UIView *scrollBar;
 
-@property (nonatomic, strong) XPageViewController *target;
+@property (nonatomic) CGFloat offX;
+
+@property (nonatomic, weak) XPageViewController *target;
 
 -(void)setSelectBtnColor:(NSInteger)index;
 -(void)updateSelectBtn;
+
 @end
