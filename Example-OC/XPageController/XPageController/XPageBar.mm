@@ -38,7 +38,7 @@
     ontitleBtnArray = [@[] mutableCopy];
     
     _selectIndex = 0;
-    _normarColor = [UIColor grayColor];
+    _normarColor = [UIColor lightGrayColor];
     _didSelectColor = [UIColor colorWithRed:234/255.0 green:69/255.0 blue:47/255.0 alpha:0.8];
     self.backgroundColor = [UIColor whiteColor];
     scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, width, XPageBarHeight)];
