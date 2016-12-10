@@ -117,28 +117,30 @@
     if (offX == 0) {
         return;
     }
-    CGFloat x1 = ((UIButton *)ontitleBtnArray[_selectIndex]).frame.origin.x;  //当前选中title  x值
+    NSInteger currentIndex = _selectIndex;
+    currentIndex = offX/width;
+    CGFloat x1 = ((UIButton *)ontitleBtnArray[currentIndex]).frame.origin.x;  //当前选中title  x值
     CGFloat x2 = 0;                                                           //下一选中title  x值
     CGFloat x = 0;                                                            //遮罩x值
     CGFloat off = 0;                                                          //两个title的距离
-    CGFloat maskWidth1 = ((UIButton *)ontitleBtnArray[_selectIndex]).frame.size.width;  //当前选中的title的宽度
+    CGFloat maskWidth1 = ((UIButton *)ontitleBtnArray[currentIndex]).frame.size.width;  //当前选中的title的宽度
     CGFloat maskWidth2 = 0;                                                       //下一选中title宽度
     CGFloat maskWidth = 0;                                                        //遮罩宽度
     CGFloat offWidth = 0;                                                         //两按钮宽度差
-    if (offX>_selectIndex*width) {          //向左滑动
-        x2 = ((UIButton *)ontitleBtnArray[_selectIndex+1]).frame.origin.x;
-        maskWidth2 = ((UIButton *)ontitleBtnArray[_selectIndex+1]).frame.size.width;
+    if (offX>currentIndex*width) {          //向左滑动
+        x2 = ((UIButton *)ontitleBtnArray[currentIndex+1]).frame.origin.x;
+        maskWidth2 = ((UIButton *)ontitleBtnArray[currentIndex+1]).frame.size.width;
     }else{                                  //向右滑动
-        x2 = ((UIButton *)ontitleBtnArray[_selectIndex-1]).frame.origin.x;
-        maskWidth2 = ((UIButton *)ontitleBtnArray[_selectIndex-1]).frame.size.width;
+        x2 = ((UIButton *)ontitleBtnArray[currentIndex-1]).frame.origin.x;
+        maskWidth2 = ((UIButton *)ontitleBtnArray[currentIndex-1]).frame.size.width;
     }
     off = fabs(x1 - x2);
     
     offWidth = maskWidth1-maskWidth2;
-    CGFloat widP = fabs((offX/width-_selectIndex)) * offWidth;             //宽度变化
+    CGFloat widP = fabs((offX/width-currentIndex)) * offWidth;             //宽度变化
     maskWidth = maskWidth1 - widP;                                         //遮罩宽度
 
-    x = x1 - (width*_selectIndex-offX) / width *off;                       //遮罩x值
+    x = x1 - (width*currentIndex-offX) / width *off;                       //遮罩x值
     
     CGRect maskRect = mask.frame;
     maskRect.origin.x = x;
