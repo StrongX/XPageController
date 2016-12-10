@@ -109,6 +109,9 @@
     mask.path = oldPath.CGPath;
     onMaskBottom.layer.mask = mask;
 }
+/*
+ *   设置滚动中遮罩的变化
+ */
 -(void)setOffX:(CGFloat)offX{
     _offX = offX;
     if (offX == 0) {
@@ -125,18 +128,17 @@
     if (offX>_selectIndex*width) {          //向左滑动
         x2 = ((UIButton *)ontitleBtnArray[_selectIndex+1]).frame.origin.x;
         maskWidth2 = ((UIButton *)ontitleBtnArray[_selectIndex+1]).frame.size.width;
-        off = x2 - x1;
     }else{                                  //向右滑动
         x2 = ((UIButton *)ontitleBtnArray[_selectIndex-1]).frame.origin.x;
         maskWidth2 = ((UIButton *)ontitleBtnArray[_selectIndex-1]).frame.size.width;
-        off = x1 - x2;
     }
+    off = fabs(x1 - x2);
     
     offWidth = maskWidth1-maskWidth2;
     CGFloat widP = fabs((offX/width-_selectIndex)) * offWidth;             //宽度变化
-    maskWidth = maskWidth1 - widP;
+    maskWidth = maskWidth1 - widP;                                         //遮罩宽度
 
-    x = x1 - (width*_selectIndex-offX) / width *off;
+    x = x1 - (width*_selectIndex-offX) / width *off;                       //遮罩x值
     
     CGRect maskRect = mask.frame;
     maskRect.origin.x = x;
@@ -146,7 +148,7 @@
     mask.path = oldPath.CGPath;
 }
 /*
- * 添加滚动的横条
+ * 添加灰色滚动的横条
  *
  */
 -(UIView *)unScrollBar{
@@ -157,6 +159,10 @@
     }
     return unScrollBar;
 }
+/*
+ * 添加选中的滚动的横条
+ *
+ */
 -(UIView *)onScrollBar{
     if (!onScrollBar) {
         CGFloat scrollBarWidth = scrollView.contentSize.width;
@@ -192,10 +198,8 @@
 -(void)setSelectBtnColor:(NSInteger)index{
     _selectIndex = index;
     for (UIButton *btn in ontitleBtnArray) {
-        [btn setTitleColor:_normarColor forState:0];
+        [btn setTitleColor:_didSelectColor forState:0];
     }
-    UIButton *selectBtn = ontitleBtnArray[index];
-    [selectBtn setTitleColor:_didSelectColor forState:0];
     [self scrollPageBar];
 }
 -(void)updateSelectBtn{
@@ -227,12 +231,7 @@
     if (scrollToX<0) {
         [scrollView setContentOffset:CGPointMake(0, 0) animated:true];
     }
-//    //移动scrollBar
-//    CGFloat btnwidth = btn.frame.size.width;
-//    CGFloat btnX = btn.frame.origin.x;
-//    [UIView animateWithDuration:0.3 animations:^{
-////        _scrollBar.frame = CGRectMake(btnX, 42, btnwidth, 2);
-//    }];
+
 }
 @end
 
