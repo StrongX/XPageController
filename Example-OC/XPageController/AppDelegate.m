@@ -43,6 +43,12 @@
     return vc;
 }
 -(NSString *)XPageTitleOfEachController:(NSInteger)index{
+    if (index == 1) {
+        return @"123";
+    }
+    if (index == 3) {
+        return @"title";
+    }
     return [NSString stringWithFormat:@"ViewController%ld",index];
 }
 
