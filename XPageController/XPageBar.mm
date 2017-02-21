@@ -60,7 +60,6 @@
         [untitleBtn setTitleColor:_normarColor forState:0];
         [untitleBtnArray addObject:untitleBtn];
         untitleBtn.tag = i;
-        [untitleBtn addTarget:self action:@selector(clickTitleBtn:) forControlEvents:1<<6];
     
         UIButton *ontitleBtn = [[UIButton alloc]initWithFrame:CGRectMake(X, 0, [self returnSizeWidthWithTitle:title]+40, XPageBarHeight)];
         ontitleBtn.titleLabel.font = [UIFont systemFontOfSize:15];
@@ -68,6 +67,8 @@
         [ontitleBtn setTitleColor:_didSelectColor forState:0];
         X+=([self returnSizeWidthWithTitle:title]+40);
         [ontitleBtnArray addObject:ontitleBtn];
+        [ontitleBtn addTarget:self action:@selector(clickTitleBtn:) forControlEvents:1<<6];
+
         ontitleBtn.tag = i;
     }
     
@@ -186,6 +187,14 @@
 -(void)setTitleWidth:(CGFloat)moreWidth{
     CGFloat X = 0;
     for (UIButton *btn in untitleBtnArray) {
+        CGRect rect = btn.frame;
+        rect.size.width+=moreWidth;
+        rect.origin.x = X;
+        btn.frame = rect;
+        X+=rect.size.width;
+    }
+    X = 0;
+    for (UIButton *btn in ontitleBtnArray) {
         CGRect rect = btn.frame;
         rect.size.width+=moreWidth;
         rect.origin.x = X;
